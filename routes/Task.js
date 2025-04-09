@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Task = require('../models/Task.js')
-const TaskController = require('../controllers/TaskController.js')
+const TaskController = require('../controllers/TaskControllers.js')
 
 router.post("/create", TaskController.create)
 router.get('/', TaskController.getAll )
