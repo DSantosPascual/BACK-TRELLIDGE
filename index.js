@@ -4,19 +4,18 @@ const app = express()
 require('dotenv').config()
 const cors = require('cors');
 
-// Habilitar CORS para todas las solicitudes
 app.use(cors());
 
 const PORT = process.env.PORT || 3000
-const routes = require('./routes/Task');
 
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
-app.use('/', routes);
+const routes = require ('./routes/routes');
+app.use('/api', routes)
 
 dbConnection()
 
 app.listen(PORT, () => {
-  console.log(`Express está escuchando en el puerto http://localhost:${PORT}`)
+    console.log(`Express está escuchando en el puerto http://localhost:${PORT}`)
 })
