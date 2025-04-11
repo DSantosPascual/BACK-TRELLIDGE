@@ -7,6 +7,7 @@ const CategoryController = require('../controllers/CategoryController');
 router.post('/tasks/create', TaskController.create);
 router.get('/tasks', TaskController.getAll);
 router.put('/tasks/id/:_id', TaskController.updateByName);
+router.put('/tasks/:_id', TaskController.updateById);
 router.delete('/tasks/id/:_id', TaskController.deleteTask);
 
 // Rutas de categorías

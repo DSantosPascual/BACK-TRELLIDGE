@@ -106,7 +106,35 @@ const TaskController = {
     } catch (error) {
       console.log(error);
     }
-  }
+  },
+  async updateById(req, res) {
+    try {
+      const id = req.params._id;
+      const { title, description, completed, checklist, category } = req.body;
+
+      const updatedTask = await Task.findByIdAndUpdate(
+        id,
+        {
+          ...(title !== undefined && { title }),
+          ...(description !== undefined && { description }),
+          ...(completed !== undefined && { completed }),
+          ...(checklist !== undefined && { checklist }),
+          ...(category !== undefined && { category }),
+        },
+        { new: true }
+      ).populate('category');
+
+      if (!updatedTask) {
+        return res.status(404).json({ message: 'Tarea no encontrada' });
+      }
+
+      res.json(updatedTask);
+    } catch (error) {
+      console.error("Error al actualizar tarea:", error);
+      res.status(500).json({ message: "Error interno al actualizar la tarea" });
+    }
+  },
+
 };
 
 module.exports = TaskController;
