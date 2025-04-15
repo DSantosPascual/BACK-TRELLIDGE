@@ -4,7 +4,10 @@ const app = express()
 require('dotenv').config()
 const cors = require('cors');
 
-app.use(cors());
+app.use(cors({
+    origin: 'https://dsantospascual.github.io'
+  }))
+  
 
 const PORT = process.env.PORT || 3000
 
