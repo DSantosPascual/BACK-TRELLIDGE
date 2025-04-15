@@ -5,7 +5,7 @@ require('dotenv').config()
 const cors = require('cors');
 
 app.use(cors({
-    origin: 'https://dsantospascual.github.io'
+    origin: ['https://dsantospascual.github.io', 'http://localhost:5173']
   }))
   
 
