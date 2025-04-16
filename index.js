@@ -5,9 +5,18 @@ require('dotenv').config()
 const cors = require('cors');
 
 app.use(cors({
-    origin: ['https://dsantospascual.github.io', 'http://localhost:5173']
-  }))
-  
+  origin: (origin, callback) => {
+    if (
+      !origin || // permitir peticiones sin origin (como en Postman)
+      origin === 'https://dsantospascual.github.io' ||
+      origin.startsWith('http://localhost')
+    ) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+}));
 
 const PORT = process.env.PORT || 3000
 
