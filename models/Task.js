@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+//Creamos el modelo para las tareas
 const TaskSchema = new mongoose.Schema({
     title: { type: String, required: true },
     description: String,

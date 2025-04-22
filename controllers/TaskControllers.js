@@ -1,3 +1,5 @@
+//Aquí manejamos la lógica para la creación y edición de las tareas
+
 const Task = require('../models/Task');
 
 const TaskController = {
@@ -5,18 +7,14 @@ const TaskController = {
     try {
       const { title, category } = req.body;
 
-      // Validamos que el título y la categoría estén presentes
       if (!title || !category) {
         return res.status(400).json({ message: "Faltan campos obligatorios" });
       }
 
-      // Creamos la nueva tarea
       const newTask = await Task.create({ title, category, completed: false });
 
-      // Populamos la categoría de la tarea recién creada
       const populatedTask = await Task.findById(newTask._id).populate('category');
 
-      // Enviamos la tarea con la categoría completamente poblada
       res.status(201).json(populatedTask);
     } catch (error) {
       console.error('Error creando tarea:', error);

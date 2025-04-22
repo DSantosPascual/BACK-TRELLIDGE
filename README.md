@@ -1,6 +1,7 @@
 # Trellidge Backend
 
-Este es el backend del proyecto Trellidge, una aplicación tipo Trello para organizar tareas visualmente en columnas (categorías). Este servidor maneja la lógica de creación, edición, reordenamiento y eliminación de tareas y categorías, conectándose con una base de datos MongoDB.
+Aquí encontrarás es el backend del proyecto Trellidge, una aplicación tipo Trello que permite organizar tareas visualmente en columnas (categorías). 
+Esta parte del proyecto se encarga de manejar la lógica del servidor y la creación, edición, reordenamiento y eliminación de tareas y categorías, conectándose con una base de datos MongoDB.
 
 ## 🧰 Tecnologías utilizadas
 
@@ -40,6 +41,7 @@ BACK-TRELLIDGE/
 ├── index.js           → Punto de entrada
 ├── .env               → Configuración de entorno
 └── package.json       → Dependencias y scripts del proyecto
+
 ## 📜 Endpoints disponibles
 
 Categorías:
@@ -60,13 +62,10 @@ DELETE /tasks/:id → Eliminar una tarea
 
 ## 🌐 Despliegue
 
-Este proyecto puede ser desplegado fácilmente en plataformas como Heroku, DigitalOcean, o AWS. Asegúrate de configurar las variables de entorno necesarias en tu plataforma de despliegue.
+El Backend ha sido desplegado mediante la aplicación Render.
 
-## 📄 Licencia
 
-Este proyecto se encuentra bajo la licencia MIT.
 
-## 🤝 Contribuciones
+Este proyecto ha sido creado por:
 
-¡Las contribuciones son bienvenidas!
-Si encuentras errores o quieres proponer mejoras, abre un issue o haz un pull request.
+Dámaso Santos, Adrián Pajuelo y Adrián Garrido.

@@ -4,10 +4,11 @@ const app = express()
 require('dotenv').config()
 const cors = require('cors');
 
+//configuración CORS para permitir peticiones tanto en local como https
 app.use(cors({
   origin: (origin, callback) => {
     if (
-      !origin || // permitir peticiones sin origin (como en Postman)
+      !origin ||
       origin === 'https://dsantospascual.github.io' ||
       origin.startsWith('http://localhost')
     ) {

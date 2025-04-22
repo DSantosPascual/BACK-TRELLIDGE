@@ -1,3 +1,5 @@
+//Aquí manejamos la lógica para la creación y edición de las categorías
+
 const Category = require('../models/Category');
 
 const CategoryController = {
